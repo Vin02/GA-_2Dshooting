@@ -20,7 +20,7 @@ public class PlayerFire : MonoBehaviour
                 timer = 1f;
             }
         }
-        if (Input.GetKey(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             AutoFire = !AutoFire;
         }
