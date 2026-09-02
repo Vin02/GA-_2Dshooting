@@ -19,13 +19,15 @@ public class PlayerMove : MonoBehaviour
         
         transform.Translate(direction * Speed * Time.deltaTime);
         
+        transform.position = transform.position + (Vector3)(direction * Speed * Time.deltaTime);
+        
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            Speed += 2;
+            Speed += 1;
         }
         else if(Input.GetKeyDown(KeyCode.E))
         {
-            Speed -= 2;
+            Speed -= 1;
         }
 
     }
