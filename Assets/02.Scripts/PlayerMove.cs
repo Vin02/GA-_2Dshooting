@@ -14,6 +14,12 @@ public class PlayerMove : MonoBehaviour
     // 별 조건이 없다면 최대 프렘임 계속
     private void Update()
     {
+        Move();
+        Accelerate();
+
+    }
+    private void Move()
+    {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         
@@ -46,7 +52,10 @@ public class PlayerMove : MonoBehaviour
         }
 
         transform.position = pos;
+    }
         
+    private void Accelerate()
+    {
         if(Input.GetKeyDown(KeyCode.Q))
         {
             Speed += 1;
@@ -55,6 +64,5 @@ public class PlayerMove : MonoBehaviour
         {
             Speed -= 1;
         }
-
     }
 }
