@@ -5,8 +5,14 @@ public class PlayerFire : MonoBehaviour
     // 스페이스바를 누를 때 마다 총알을 생성해서 발사하고 싶음
     // 필요 속성 : 총알 프리팹/생성 위치(총구)
     public GameObject bulletPrefab;
+    public GameObject subbulletPrefableft;
+    public GameObject subbulletPrefabright;
+    public GameObject subbulletPrefabcenter;
     public Transform leftFirePoint;
     public Transform rightFirePoint;
+    public Transform subleftFirePoint;
+    public Transform subrightFirePoint;
+    public Transform subcenterFirePoint;
     public bool AutoFire = false;
     public float timer = 1f;
     private void Update()
@@ -36,5 +42,14 @@ public class PlayerFire : MonoBehaviour
             
         GameObject rightbullet = Instantiate(bulletPrefab);
         rightbullet.transform.position = rightFirePoint.transform.position;
+        
+        GameObject subcenterbullet = Instantiate(subbulletPrefabcenter);
+        subcenterbullet.transform.position = subcenterFirePoint.transform.position;
+        
+        GameObject subrightbullet = Instantiate(subbulletPrefabright);
+        subrightbullet.transform.position = subleftFirePoint.transform.position;
+        
+        GameObject subleftbullet = Instantiate(subbulletPrefableft);
+        subleftbullet.transform.position = subrightFirePoint.transform.position;
     }
 }

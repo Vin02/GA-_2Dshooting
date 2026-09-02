@@ -1,16 +1,39 @@
 using UnityEngine;
 
-public class SubBullet : MonoBehaviour
+public class subBullet : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float Speed = 7f;
+
+    static int colorIndex = 0;
+
+    Color[] colors =
+    {
+        Color.red,
+        new Color(1f, 0.5f, 0f),  
+        Color.yellow,
+        Color.green,
+        Color.blue,
+        new Color(0.2f, 0f, 0.5f), 
+        new Color(0.5f, 0f, 1f)    
+    };
+
     void Start()
     {
-        
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+
+        spriteRenderer.color = colors[colorIndex];
+
+        colorIndex++;
+
+        if (colorIndex >= colors.Length)
+        {
+            colorIndex = 0;
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        Vector2 direction = Vector2.up;
+        transform.Translate(direction * Speed * Time.deltaTime);
     }
 }
