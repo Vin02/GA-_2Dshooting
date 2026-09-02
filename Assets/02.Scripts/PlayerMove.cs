@@ -15,7 +15,7 @@ public class PlayerMove : MonoBehaviour
         
         Debug.Log ($"Horizontal: {horizontal}, Vertical: {vertical}");
 
-        Vector2 direction = new Vector2(horizontal, vertical);
+        Vector2 direction = new Vector2(horizontal, vertical).normalized;
         
         transform.Translate(direction * Speed * Time.deltaTime);
 
