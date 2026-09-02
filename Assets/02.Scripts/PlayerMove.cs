@@ -5,6 +5,10 @@ public class PlayerMove : MonoBehaviour
     //필요 변수는 속도
     //키보드를 입력받아 이동하게 
     public float Speed;
+    public float minX = -2.4f;
+    public float maxX = 2.4f;
+    public float minY = -5f;
+    public float maxY = 0f;
    
     
     // 별 조건이 없다면 최대 프렘임 계속
@@ -17,9 +21,31 @@ public class PlayerMove : MonoBehaviour
 
         Vector2 direction = new Vector2(horizontal, vertical).normalized;
         
-        transform.Translate(direction * Speed * Time.deltaTime);
-        
         transform.position = transform.position + (Vector3)(direction * Speed * Time.deltaTime);
+
+        Vector3 pos = transform.position;
+
+        if (pos.x > maxX)
+        {
+            pos.x = maxX;
+        }
+
+        if (pos.x < minX)
+        {
+            pos.x = minX;
+        }
+
+        if (pos.y > maxY)
+        {
+            pos.y = maxY;
+        }
+
+        if (pos.y < minY)
+        {
+            pos.y = minY;
+        }
+
+        transform.position = pos;
         
         if(Input.GetKeyDown(KeyCode.Q))
         {
