@@ -27,12 +27,12 @@ public class PlayerMove : MonoBehaviour
 
         if (pos.x > maxX)
         {
-            pos.x = maxX;
+            pos.x = minX;
         }
 
         if (pos.x < minX)
         {
-            pos.x = minX;
+            pos.x = maxX;
         }
 
         if (pos.y > maxY)
