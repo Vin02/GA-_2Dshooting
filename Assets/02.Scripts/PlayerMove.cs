@@ -18,6 +18,15 @@ public class PlayerMove : MonoBehaviour
         Vector2 direction = new Vector2(horizontal, vertical).normalized;
         
         transform.Translate(direction * Speed * Time.deltaTime);
+        
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            Speed += 2;
+        }
+        else if(Input.GetKeyDown(KeyCode.E))
+        {
+            Speed -= 2;
+        }
 
     }
 }
