@@ -7,16 +7,34 @@ public class PlayerFire : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform leftFirePoint;
     public Transform rightFirePoint;
-    void Update()
+    public bool AutoFire = false;
+    public float timer = 1f;
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        timer -= Time.deltaTime;
+        if (timer <= 0)
         {
-            GameObject leftbullet = Instantiate(bulletPrefab);
-            leftbullet.transform.position = leftFirePoint.transform.position;
-            
-            GameObject rightbullet = Instantiate(bulletPrefab);
-            rightbullet.transform.position = rightFirePoint.transform.position;
+            if (Input.GetKeyDown(KeyCode.Space) || AutoFire)
+            {
+                Fire();
+                timer = 1f;
+            }
         }
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            AutoFire = !AutoFire;
+        }
+
         
+        
+    }
+
+    private void Fire()
+    {
+        GameObject leftbullet = Instantiate(bulletPrefab);
+        leftbullet.transform.position = leftFirePoint.transform.position;
+            
+        GameObject rightbullet = Instantiate(bulletPrefab);
+        rightbullet.transform.position = rightFirePoint.transform.position;
     }
 }
