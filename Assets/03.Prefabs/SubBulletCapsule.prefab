@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 9170381238166686472}
   - component: {fileID: 4877749850490769822}
-  - component: {fileID: 2882231757277588543}
   - component: {fileID: 7312061437203220678}
   - component: {fileID: -4766455382836363983}
-  m_Layer: 0
+  - component: {fileID: 5422500647868721196}
+  m_Layer: 7
   m_Name: SubBulletCapsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,19 +94,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &2882231757277588543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7450062060151897835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2357be22163fd294eb4b69fd24bbe400, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SubBullet
-  Speed: 15
 --- !u!50 &7312061437203220678
 Rigidbody2D:
   serializedVersion: 5
@@ -180,3 +167,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &5422500647868721196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7450062060151897835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa77de69f3fc8444a9331b57afbab0b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bullet
+  Speed: 80
