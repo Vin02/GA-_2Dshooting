@@ -14,6 +14,8 @@ public class PlayerFire : MonoBehaviour
     public Transform subrightFirePoint;
     public Transform subcenterFirePoint;
     public bool AutoFire = false;
+    public int hexagonCount = 9;
+    public float spreadAngle = 80f;
     public float timer = 1f;
     private void Update()
     {
@@ -46,10 +48,22 @@ public class PlayerFire : MonoBehaviour
         GameObject subcenterbullet = Instantiate(subbulletPrefabcenter);
         subcenterbullet.transform.position = subcenterFirePoint.transform.position;
         
+        for (int i = 0; i < hexagonCount; i++)
+        {
+            float angle = -spreadAngle / 2
+                          + spreadAngle / (hexagonCount - 1) * i;
+
+            Instantiate(
+                subbulletPrefabcenter,
+                subcenterFirePoint.position,
+                Quaternion.Euler(0, 0, angle)
+            );
+        }
+        
         GameObject subrightbullet = Instantiate(subbulletPrefabright);
-        subrightbullet.transform.position = subleftFirePoint.transform.position;
+        subrightbullet.transform.position = subrightFirePoint.transform.position;
         
         GameObject subleftbullet = Instantiate(subbulletPrefableft);
-        subleftbullet.transform.position = subrightFirePoint.transform.position;
+        subleftbullet.transform.position = subleftFirePoint.transform.position;
     }
 }
