@@ -23,8 +23,6 @@ public class PlayerMove : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         
-        Debug.Log ($"Horizontal: {horizontal}, Vertical: {vertical}");
-
         Vector2 direction = new Vector2(horizontal, vertical).normalized;
         
         transform.position = transform.position + (Vector3)(direction * Speed * Time.deltaTime);

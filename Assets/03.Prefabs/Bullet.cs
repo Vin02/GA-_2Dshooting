@@ -36,4 +36,18 @@ public class Bullet : MonoBehaviour
         Vector2 direction = Vector2.up;
         transform.Translate(direction * Speed * Time.deltaTime);
     }
+    // 충돌 관련 이벤트 (Enter -> Stay -> Exit)
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(this.gameObject);
+        
+        //태그 사용해 Enemy만 죽여보자
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            
+            Destroy(collision.gameObject);
+        }
+    }
+    
 }
