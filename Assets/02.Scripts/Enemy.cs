@@ -1,18 +1,23 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour
 {
-    public float Health = 1000;
-    public float Speed;
+    [FormerlySerializedAs("Health")] [SerializeField] private float _health = 1000;
+    [FormerlySerializedAs("EnemySpeed")] [SerializeField] protected float _enemySpeed;
+    
     private void Update()
     {
-        transform.position += Vector3.down * Speed * Time.deltaTime;
+            EnemyMove();
     }
+
+    public abstract void EnemyMove();
+    
 
     public void DamageCheck(int damage)
     {
-        Health -= damage;
-        if (Health <= 0)
+        _health -= damage;
+        if (_health <= 0)
             {
             Destroy(gameObject);
             }
