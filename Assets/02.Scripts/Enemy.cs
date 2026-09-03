@@ -8,4 +8,14 @@ public class Enemy : MonoBehaviour
     {
         transform.position += Vector3.down * Speed * Time.deltaTime;
     }
+
+    public void DamageCheck(int damage)
+    {
+        Health -= damage;
+        if (Health <= 0)
+            {
+            Destroy(gameObject);
+            }
+        
+    }
 }
