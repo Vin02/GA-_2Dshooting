@@ -3,6 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float Speed = 3f;
+    public int Damage = 20;
 
     static int colorIndex = 0;
 
@@ -45,7 +46,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-            enemy.DamageCheck(20);
+            enemy.DamageCheck(Damage);
         }
     }
     
