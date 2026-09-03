@@ -181,3 +181,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   Speed: 5
   Damage: 100
+  IsCapsule: 1
+  HexagonPrefab: {fileID: 6588159012282376668, guid: 25d0a1d3688f0844aad3cef3e2b32744, type: 3}
+  HexagonCount: 42
