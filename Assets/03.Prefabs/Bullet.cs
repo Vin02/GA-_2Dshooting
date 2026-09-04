@@ -44,7 +44,6 @@ public class Bullet : MonoBehaviour
         transform.Translate(direction * Speed * Time.deltaTime);
     }
 
-    // 응집도는 높히고, 결합도는 낮추기
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))

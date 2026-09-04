@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7312061437203220678}
   - component: {fileID: -4766455382836363983}
   - component: {fileID: 5422500647868721196}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: SubBulletCapsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,4 +183,4 @@ MonoBehaviour:
   Damage: 100
   IsCapsule: 1
   HexagonPrefab: {fileID: 6588159012282376668, guid: 25d0a1d3688f0844aad3cef3e2b32744, type: 3}
-  HexagonCount: 42
+  HexagonCount: 70
