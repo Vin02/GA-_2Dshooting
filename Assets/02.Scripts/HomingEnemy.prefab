@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc6daa53fc3ce640811cbce82da081d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HomingEnemy
-  _health: 1000
+  _health: 50
   _enemySpeed: 3
 --- !u!61 &-571640136315154429
 BoxCollider2D:
