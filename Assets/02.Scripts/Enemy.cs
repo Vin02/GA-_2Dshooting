@@ -3,7 +3,7 @@ using UnityEngine.Serialization;
 
 public abstract class Enemy : MonoBehaviour
 {
-    [FormerlySerializedAs("Health")] [SerializeField] private float _health = 1000;
+    [FormerlySerializedAs("Health")] [SerializeField] private float _health = 60;
     [FormerlySerializedAs("EnemySpeed")] [SerializeField] protected float _enemySpeed;
     
     private void Update()
@@ -23,7 +23,7 @@ public abstract class Enemy : MonoBehaviour
             // 전역적으로 접근 가능
             // 인스턴스가 하나임을 보장한다..
             ScoreManager scoreManager = ScoreManager.Instance;
-            scoreManager.AddScore(100);
+            scoreManager.AddScore(10);
             Destroy(gameObject);
             }
         

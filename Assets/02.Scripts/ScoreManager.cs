@@ -5,7 +5,8 @@ public class ScoreManager : MonoBehaviour
 {
     //관리: 특정 데이터에 대한 무결성과 추가 수정 삭제 등과 관련된 게임 로직
     
-    public static ScoreManager Instance;
+    private static ScoreManager _instance;
+    public static ScoreManager Instance => _instance;
 
     private int _bestScore;
     private int _currentScore;
@@ -14,7 +15,12 @@ public class ScoreManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        if (_instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        _instance = this;
     }
     
     public void AddScore(int score)
