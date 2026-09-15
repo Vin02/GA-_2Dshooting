@@ -66,9 +66,11 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void FireHexagons(Vector2 hitPoint)
+private void FireHexagons(Vector2 hitPoint)
     {
         Debug.Log("Capsule 폭발!");
+
+        SoundManager.Instance?.PlayExplosionSound();
 
         for (int i = 0; i < HexagonCount; i++)
         {

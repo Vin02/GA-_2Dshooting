@@ -37,8 +37,10 @@ public class PlayerFire : MonoBehaviour
         
     }
 
-    private void Fire()
+private void Fire()
     {
+        SoundManager.Instance?.PlayBulletSound();
+
         GameObject leftbullet = Instantiate(bulletPrefab);
         leftbullet.transform.position = leftFirePoint.transform.position;
             
